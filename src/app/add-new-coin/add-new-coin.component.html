@@ -1,0 +1,22 @@
+<hr />
+<form (submit)="submitCoinData(coin)">
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Coin Name</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Coin Name eg: BitCoin, LiteCoin"
+    [(ngModel)]="coin.name" name="coinName">
+    <br />
+    <label for="exampleFormControlInput1">Amount of Coins</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter Amount of Coins Purchased" required
+    [(ngModel)]="coin.amount" name="coinAmount">
+    <br />
+    <label for="exampleFormControlInput1">Buying Value</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Amount in Dollars" required
+    [(ngModel)]="coin.dollarValue" name="coinDollarValue">
+    <br />
+    <label for="exampleFormControlInput1">Current Value</label>
+    <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Current value of the coin in dollars" required
+    [(ngModel)]="coin.currentValue" name="coinCurrentValue">
+  </div>
+  <button type="submit" style="display:none">hidden submit</button>
+</form>
+<button (click)="submitCoinData()">Submit</button>
