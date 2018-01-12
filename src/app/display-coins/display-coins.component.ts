@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/map';
+
+import { GetCoinDataService } from "../get-coin-data.service";
 
 @Component({
   selector: 'app-display-coins',
@@ -12,23 +12,20 @@ export class DisplayCoinsComponent implements OnInit {
 
   selectedCoins = ["Bitcoin", "Ethereum", "Ripple", "Litecoin", "Bitcoin Cash", "Kin"];
   extractData:any;
-  constructor(private http: Http) { }
+  fetchedData: boolean = true;
+  constructor(
+    private getCoinDataService: GetCoinDataService
+  ) { }
 
   ngOnInit() {
     this.viewData();
   }
 
-  getData():Observable<any[]> {
-    return this.http.get('https://api.coinmarketcap.com/v1/ticker/')
-        .map(res => res.json());
-  }
-
   viewData() {
-    this.getData().subscribe(coinData => {
+    this.getCoinDataService.getData().subscribe(coinData => {
       this.extractData = coinData;
       this.extractData = this.extractData.filter(element => this.selectedCoins.includes(element.name));
-      console.log(this.extractData);
+      this.fetchedData = false;
     });
   }
-
 }
