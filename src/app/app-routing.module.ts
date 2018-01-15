@@ -6,6 +6,8 @@ import { DisplayCoinsComponent } from "./display-coins/display-coins.component";
 const routes: Routes = [
   { path: '', redirectTo: '/displayCoins', pathMatch: 'full' },
   {path:"addNewCoin", component: AddNewCoinComponent},
+  {path:"addNewCoin/:coinName", component: AddNewCoinComponent},
+
   {path:"displayCoins", component: DisplayCoinsComponent}
 ];
 
