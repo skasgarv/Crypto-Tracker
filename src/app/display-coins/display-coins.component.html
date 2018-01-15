@@ -1,5 +1,5 @@
 <div id="container" *ngFor="let data of extractData">
-  <div class="obj" routerLink="/coinDetails/{{data.name}}">
+  <div class="obj" routerLink="/coinDetails/{{data.name}}" style="cursor:pointer">
     <hr style="border: 1px solid #f00" />​
     {{data.name}} ({{data.symbol}})
     <div class="box">

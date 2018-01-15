@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let coin of coinList"  routerLink="/coinDetails/{{coin.name}}">
+    <tr *ngFor="let coin of coinList"  routerLink="/coinDetails/{{coin.name}}" style="cursor:pointer">
       <th scope="row">{{coin.rank}}</th>
       <td>{{coin.name}} ({{coin.symbol}})</td>
       <td>${{coin.price_usd}}</td>
