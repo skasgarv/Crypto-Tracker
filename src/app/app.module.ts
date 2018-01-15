@@ -12,6 +12,8 @@ import { AppRoutingModule } from './/app-routing.module';
 import { DisplayCoinsComponent } from './display-coins/display-coins.component';
 import { GetCoinDataService } from "./get-coin-data.service";
 import { SearchBarComponent } from './search-bar/search-bar.component';
+import { CoinDetailsComponent } from './coin-details/coin-details.component';
+import { CryptocurrencyListComponent } from './cryptocurrency-list/cryptocurrency-list.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { SearchBarComponent } from './search-bar/search-bar.component';
     NavbarComponent,
     AddNewCoinComponent,
     DisplayCoinsComponent,
-    SearchBarComponent
+    SearchBarComponent,
+    CoinDetailsComponent,
+    CryptocurrencyListComponent
   ],
   imports: [
     BrowserModule,

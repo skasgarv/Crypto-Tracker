@@ -1,0 +1,30 @@
+<div *ngFor="let coin of coinDetail">
+    <div class="center box">
+      {{coin.name}} ({{coin.symbol}})
+    </div>
+    <hr />
+    <table class="table table-bordered table-dark">
+      <tbody>
+        <tr>
+          <td>Price (in USD)</td>
+          <td>${{coin.price_usd}}</td>
+        </tr>
+        <tr [ngStyle]="{'color': coin.percent_change_1h > 0 ? 'green' : 'red'}">
+          <td>Percent Change (1h)</td>
+          <td>{{coin.percent_change_1h}}%</td>
+        </tr>
+        <tr [ngStyle]="{'color': coin.percent_change_24h > 0 ? 'green' : 'red'}">
+          <td>Percent Change (24h)</td>
+          <td>{{coin.percent_change_24h}}%</td>
+        </tr>
+        <tr [ngStyle]="{'color': coin.percent_change_7d > 0 ? 'green' : 'red'}">
+          <td>Percent Change (7 days)</td>
+          <td>{{coin.percent_change_7d}}%</td>
+        </tr>
+        <tr>
+          <td>Last Updated</td>
+          <td>{{coin.last_updated *1000 | date:'medium'}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>

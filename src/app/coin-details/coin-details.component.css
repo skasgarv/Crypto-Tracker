@@ -1,0 +1,10 @@
+.center {
+  text-align: center;
+}
+.box {
+  width: auto;
+  border: 1px solid gray;
+  margin: 10px;
+  background-color: black;
+  color: white
+}
